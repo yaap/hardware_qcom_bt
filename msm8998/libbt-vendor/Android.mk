@@ -15,7 +15,7 @@
 #
 
 LOCAL_PATH := $(call my-dir)
-
+ifneq ($(BOARD_USES_QCOM_HARDWARE),true)
 ifeq ($(BOARD_HAVE_BLUETOOTH_QCOM),true)
 
 include $(CLEAR_VARS)
@@ -97,3 +97,4 @@ LOCAL_CFLAGS += \
 include $(BUILD_SHARED_LIBRARY)
 
 endif # BOARD_HAVE_BLUETOOTH_QCOM
+endif
